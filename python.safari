@@ -1,0 +1,22 @@
+from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+import time
+
+# Initialize the Safari driver
+driver = webdriver.Safari()
+
+# Open the target website
+driver.get('https://mcc.admissions.nic.in/applicant/Report/ViewInstituteProfileDetail.aspx?enc=yVQCIiq12npg+pcvNJRdczPF17I15Ol0NS9nSxDhDdGLAjT1f7ob/W1d83JxT5Jc')  # Replace with the actual URL of the page containing the dropdown
+
+# Wait for the page to load (optional, adjust the wait time as needed)
+time.sleep(3)
+
+# Locate the dropdown element by its ID 'dg4'
+dropdown = Select('Type of the Institute')
+
+# Select an option by its visible text (e.g., "University", "College")
+dropdown.select_by_visible_text('Diplomate of National Board (DNB) PG')  # Replace with the actual option text
+
+# Close the browser after selection
+# time.sleep(2)  # Optional delay to observe the result before closing
+# driver.quit()
